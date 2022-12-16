@@ -7,9 +7,9 @@
 
 <script setup lang="ts">
 import { computed } from 'vue';
-import { useGlobalData } from '../store'
+import { useGlobalStore } from '../store'
 
-const store = useGlobalData()
+const store = useGlobalStore()
 
 const template = computed(() => store.getTemplateById(2))
 

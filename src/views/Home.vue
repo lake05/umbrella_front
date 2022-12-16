@@ -7,9 +7,9 @@
 
 <script lang="ts" setup>
 import { storeToRefs } from 'pinia'
-import { useGlobalData } from '../store'
+import { useGlobalStore } from '../store'
 import TemplateList from '../components/TemplateList.vue'
 
-const store = useGlobalData()
+const store = useGlobalStore()
 const { templates } = storeToRefs(store)
 </script>

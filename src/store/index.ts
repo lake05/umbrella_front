@@ -56,7 +56,7 @@ const testData: TemplateProps[] = [
   },
 ]
 
-export const useGlobalData = defineStore('globalData', {
+export const useGlobalStore = defineStore('global', {
   state: (): GlobalDataProps => {
     return {
       templates: testData,

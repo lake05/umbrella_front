@@ -15,13 +15,13 @@
 import { ElMessage } from 'element-plus'
 import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router';
-import { useGlobalData } from '../store';
+import { useGlobalStore } from '../store';
 
 
 
 
 const router = useRouter()
-const store = useGlobalData()
+const store = useGlobalStore()
 const { user } = storeToRefs(store)
 
 const login = () => {

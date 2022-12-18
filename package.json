@@ -21,6 +21,7 @@
     "@types/lodash-es": "^4.17.6",
     "@types/uuid": "^9.0.0",
     "@vitejs/plugin-vue": "^4.0.0",
+    "@vitejs/plugin-vue-jsx": "^3.0.0",
     "autoprefixer": "^10.4.13",
     "postcss": "^8.4.20",
     "sass": "^1.56.2",

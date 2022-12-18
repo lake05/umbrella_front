@@ -11,7 +11,6 @@
 
 
 <script lang="ts" setup>
-import UserProfile from './UserProfile.vue'
 
 const handleSelect = (key: string, keyPath: string[]) => {
 

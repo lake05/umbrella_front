@@ -25,6 +25,8 @@
 
 
 <script lang="ts" setup>
+// import PropsTable from '../components/PropsTableTsx'
+
 import { storeToRefs } from 'pinia'
 import { useEditorStore } from '../store/editor'
 

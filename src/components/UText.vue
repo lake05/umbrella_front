@@ -11,7 +11,8 @@ const props = defineProps({
   tag: {
     type: String,
     default: 'div'
-  }, ...defaultProps
+  },
+  ...defaultProps
 })
 
 const { styleProps, handleClick, } = useComponentCommon(props, textStylePropNames);

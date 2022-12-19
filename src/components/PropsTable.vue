@@ -6,7 +6,7 @@
         <template v-if="value.options">
           <component :is="value.subcomponent" v-for="(option, k) in value.options" :key="k" :value="option.value"
             :label="option.value">
-            {{ option.text }}
+            <render-Vnode :VNode="option.text" />
           </component>
         </template>
       </component>
@@ -15,6 +15,7 @@
 </template>
 
 <script setup lang="ts">
+import RenderVnode from './RenderVnode'
 import { reduce } from 'lodash-es';
 import { computed, ref, VNode } from 'vue';
 import { TextComponentProps } from '../defaultProps'
@@ -46,6 +47,7 @@ const finalProps = computed(() => {
   return reduce(props.props, (result, value, k) => {
     const key = k as keyof TextComponentProps
     const item = mapPropsToForms[key]
+    console.log('item: ', item);
     if (item) {
       const { valueProp = 'model-value', eventName = "change", initialTransform } = item
       const newItem: FormProps = {

@@ -11,6 +11,7 @@ declare module '@vue/runtime-core' {
     EditorWrapper: typeof import('./src/components/EditorWrapper.vue')['default']
     Header: typeof import('./src/components/Header.vue')['default']
     PropsTable: typeof import('./src/components/PropsTable.vue')['default']
+    RenderVNode: typeof import('./src/components/RenderVNode.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TemplateList: typeof import('./src/components/TemplateList.vue')['default']

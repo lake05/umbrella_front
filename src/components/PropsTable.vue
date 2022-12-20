@@ -47,7 +47,6 @@ const finalProps = computed(() => {
   return reduce(props.props, (result, value, k) => {
     const key = k as keyof TextComponentProps
     const item = mapPropsToForms[key]
-    console.log('item: ', item);
     if (item) {
       const { valueProp = 'model-value', eventName = "change", initialTransform } = item
       const newItem: FormProps = {

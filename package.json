@@ -24,6 +24,7 @@
     "@types/uuid": "^9.0.0",
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vue/test-utils": "^2.2.6",
     "autoprefixer": "^10.4.13",
     "happy-dom": "^8.1.0",
     "postcss": "^8.4.20",

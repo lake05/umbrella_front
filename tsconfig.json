@@ -11,14 +11,19 @@
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
     "noEmit": true,
-    "types": ["element-plus/global", "vitest/globals"]
+    "types": ["element-plus/global", "vitest/globals"],
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
-    "expect.test.ts"
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
   ],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

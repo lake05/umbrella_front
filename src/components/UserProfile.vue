@@ -13,16 +13,16 @@
 
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
-import { storeToRefs } from 'pinia'
 import { useRouter } from 'vue-router';
-import { useGlobalStore } from '../store';
+import { useGlobalStore, UserProps } from '../store';
 
-
+const props = defineProps<{
+  user: UserProps
+}>()
 
 
 const router = useRouter()
 const store = useGlobalStore()
-const { user } = storeToRefs(store)
 
 const login = () => {
   store.login()

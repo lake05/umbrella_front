@@ -2,7 +2,7 @@
   <div>
     <h1>{{ msg }}</h1>
     <button @click="setCount">{{ count }}</button>
-    <input type="text" v-model="todo">
+    <input type="text" v-model="todo" />
     <button class="addTodo" @click="addTodo">add</button>
     <button class="loadUser" @click="loadUser">load</button>
     <p v-if="user.loading" class="loading">Loading</p>
@@ -16,7 +16,7 @@
 
 <script setup lang="ts">
 import axios from 'axios'
-import { reactive, ref } from 'vue';
+import { reactive, ref } from 'vue'
 const props = defineProps<{ msg: string }>()
 const emit = defineEmits<{ (e: 'send', data: any): void }>()
 
@@ -26,7 +26,7 @@ const count = ref(1)
 const user = reactive({
   data: null as any,
   loading: false,
-  error: false
+  error: false,
 })
 
 const setCount = () => count.value++
@@ -40,13 +40,17 @@ const addTodo = () => {
 
 const loadUser = () => {
   user.loading = true
-  axios.get('https://jsonplaceholder.typicode.com/posts').then(resp => {
-    console.log('resp: ', resp);
-    user.data = resp.data
-  }).catch(() => {
-    user.error = true
-  }).finally(() => {
-    user.loading = false
-  })
+  axios
+    .get('https://jsonplaceholder.typicode.com/posts')
+    .then((resp) => {
+      console.log('resp: ', resp)
+      user.data = resp.data
+    })
+    .catch(() => {
+      user.error = true
+    })
+    .finally(() => {
+      user.loading = false
+    })
 }
 </script>

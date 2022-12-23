@@ -8,6 +8,4 @@
     </el-main>
   </el-container>
 </template>
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>

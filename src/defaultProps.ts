@@ -75,7 +75,7 @@ export const textDefaultProps: TextComponentProps = {
 export const transformToComponentProps = (props: TextComponentProps) => {
   return mapValues(props, (item) => {
     return {
-      type: item.constructor as any,
+      type: item.constructor as StringConstructor,
       default: item,
     }
   })

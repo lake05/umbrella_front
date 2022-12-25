@@ -12,12 +12,13 @@
     "skipLibCheck": true,
     "noEmit": true,
     "types": ["element-plus/global", "vitest/globals"],
-    "baseUrl": "./",
+    "baseUrl": ".",
     "paths": {
       "@/*": ["src/*"]
     }
   },
   "include": [
+    "auto-imports.d.ts",
     "src/**/*.ts",
     "src/**/*.d.ts",
     "src/**/*.tsx",

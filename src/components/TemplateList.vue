@@ -5,13 +5,17 @@
         <router-link to="/editor">
           <el-card :body-style="{ padding: '0px' }">
             <img v-if="item.coverImage" :src="item.coverImage" />
-            <img v-else
-              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png" />
+            <img
+              v-else
+              src="https://shadow.elemecdn.com/app/element/hamburger.9cf7b091-55e9-11e9-a976-7f4d0b07eef6.png"
+            />
             <div style="padding: 14px">
               <span>{{ item.title }}</span>
               <div class="bottom">
                 <time class="time">{{ item.author }}</time>
-                <el-tag class="ml-2">copied count: {{ item.copiedCount }}</el-tag>
+                <el-tag class="ml-2"
+                  >copied count: {{ item.copiedCount }}</el-tag
+                >
               </div>
             </div>
           </el-card>
@@ -22,8 +26,8 @@
 </template>
 
 <script setup lang="ts">
-import { toRefs } from 'vue';
-import { TemplateProps } from '../store';
+import { toRefs } from 'vue'
+import { TemplateProps } from '../store'
 
 interface Props {
   list: TemplateProps[]

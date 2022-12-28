@@ -1,7 +1,7 @@
 <template>
   <el-container class="h-screen">
     <el-header>
-      <Header />
+      <u-header />
     </el-header>
     <el-main>
       <router-view></router-view>

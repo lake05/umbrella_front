@@ -4,7 +4,7 @@ import { TextComponentProps } from '../defaultProps'
 
 const useComponentCommon = (
   props: Readonly<Partial<TextComponentProps>>,
-  picks: string[]
+  picks: string[],
 ) => {
   const styleProps = computed(() => pick(props, picks))
 

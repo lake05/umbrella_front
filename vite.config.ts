@@ -10,13 +10,16 @@ function _resolve(dir) {
   return join(__dirname, dir)
 }
 
-// https://vitejs.dev/config/
 export default defineConfig({
+  resolve: {
+    alias: {
+      '@': _resolve('src'),
+    },
+  },
   test: {
     // enable jest-like global test APIs
     globals: true,
     // simulate DOM with happy-dom
-    // (requires installing happy-dom as a peer dependency)
     environment: 'happy-dom',
   },
   plugins: [
@@ -24,7 +27,12 @@ export default defineConfig({
     vueJsx(),
     Components({}),
     AutoImport({
-      imports: ['vue'],
+      imports: ['vue', 'vue-router'],
+      eslintrc: {
+        enabled: true,
+        filepath: './.eslintrc-auto-import.json',
+        globalsPropValue: true,
+      },
     }),
     ViteImages({
       dirs: ['src/assets/images'], // 指明图片存放目录

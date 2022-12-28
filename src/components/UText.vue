@@ -10,17 +10,23 @@ import useComponentCommon from '../hooks/useComponentCommon'
 const props = defineProps({
   tag: {
     type: String,
-    default: 'div'
+    default: 'div',
   },
-  ...defaultProps
+  ...defaultProps,
 })
 
-const { styleProps, handleClick, } = useComponentCommon(props, textStylePropNames);
-
+const { styleProps, handleClick } = useComponentCommon(
+  props,
+  textStylePropNames,
+)
 </script>
 
-<script  lang="ts">
-import { textDefaultProps, textStylePropNames, transformToComponentProps } from '../defaultProps'
+<script lang="ts">
+import {
+  textDefaultProps,
+  textStylePropNames,
+  transformToComponentProps,
+} from '../defaultProps'
 
 const defaultProps = transformToComponentProps(textDefaultProps)
 </script>

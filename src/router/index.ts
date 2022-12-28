@@ -1,12 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
 
-import Home from '@/views/Home.vue'
-import Edit from '@/views/Editor.vue'
+import HomePage from '@/views/HomePage.vue'
+import UEditPage from '@/views/EditorPage.vue'
 import TemplateDetail from '@/views/TemplateDetail.vue'
 
 const routes = [
-  { path: '/', component: Home },
-  { path: '/editor', component: Edit },
+  { path: '/', component: HomePage },
+  { path: '/editor', component: UEditPage },
   { path: '/template/:id?', component: TemplateDetail },
 ]
 

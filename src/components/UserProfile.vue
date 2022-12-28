@@ -13,13 +13,12 @@
 
 <script setup lang="ts">
 import { ElMessage } from 'element-plus'
-import { useRouter } from 'vue-router';
-import { useGlobalStore, UserProps } from '../store';
+import { useRouter } from 'vue-router'
+import { useGlobalStore, UserProps } from '../store'
 
 const props = defineProps<{
   user: UserProps
 }>()
-
 
 const router = useRouter()
 const store = useGlobalStore()
@@ -41,6 +40,6 @@ const logout = () => {
 
   setTimeout(() => {
     router.push('/')
-  }, 1000);
+  }, 1000)
 }
 </script>

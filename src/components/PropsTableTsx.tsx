@@ -67,7 +67,7 @@ export default {
           }
           return result
         },
-        {} as { [key: string]: FormProps }
+        {} as { [key: string]: FormProps },
       )
     })
 

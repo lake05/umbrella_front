@@ -1,8 +1,8 @@
 <template>
   <div
     class="p-0 cursor-pointer border border-solid border-transparent select-none hover:border-dashed hover:border-slate-800"
-    @click="onItemClick(id)"
     :class="{ 'border-blue-500': active }"
+    @click="onItemClick(id)"
   >
     <slot></slot>
   </div>

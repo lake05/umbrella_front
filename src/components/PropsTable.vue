@@ -10,7 +10,7 @@
       >
         <template v-if="value.options">
           <component
-            :is="value.subcomponent"
+            :is="value.subComponent"
             v-for="(option, k) in value.options"
             :key="k"
             :value="option.value"
@@ -27,20 +27,20 @@
 <script setup lang="ts">
 import RenderVnode from './RenderVnode'
 import { reduce } from 'lodash-es'
-import { computed, ref, VNode } from 'vue'
-import { TextComponentProps } from '../defaultProps'
-import { mapPropsToForms, PropsToForms } from '../propsMap'
+import { computed, VNode } from 'vue'
+import { TextComponentProps } from 'um-parts-ui'
+import { mapPropsToForms } from '../propsMap'
 
 export interface FormProps {
   component: string
-  subcomponent?: string
+  subComponent?: string
   value: string
-  extraProps?: { [key: string]: any }
+  extraProps?: { [key: string]: unknown }
   text?: string
-  options?: { text: string | VNode; value: any }[]
+  options?: { text: string | VNode; value: unknown }[]
   valueProp: string // 自定义model-value
   eventName: string
-  events: { [key: string]: (e: any) => any }
+  events: { [key: string]: (e: unknown) => unknown }
 }
 
 interface Props {
@@ -49,7 +49,7 @@ interface Props {
 
 const props = defineProps<Props>()
 const emit = defineEmits<{
-  (e: 'change', data: any): void
+  (e: 'change', data: unknown): void
 }>()
 
 const finalProps = computed(() => {
@@ -70,7 +70,7 @@ const finalProps = computed(() => {
           valueProp,
           eventName,
           events: {
-            [eventName]: (e: any) => {
+            [eventName]: (e: unknown) => {
               emit('change', {
                 key,
                 value: item.afterTransform ? item.afterTransform(e) : e,

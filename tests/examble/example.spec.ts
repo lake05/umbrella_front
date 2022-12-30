@@ -5,7 +5,7 @@ import Example from './Example.vue'
 vi.mock('axios')
 const mockAxios = vi.mocked(axios, { deep: true })
 const msg = 'new message'
-let wrapper: VueWrapper<any>
+let wrapper: VueWrapper<unknown>
 describe('Example.vue', () => {
   beforeAll(() => {
     wrapper = mount(Example, {
@@ -39,7 +39,7 @@ describe('Example.vue', () => {
 
     expect(wrapper.emitted()).toHaveProperty('send')
     const events = wrapper.emitted('send')
-    expect(events![0]).toEqual([todoContent])
+    expect(events?.length && events[0]).toEqual([todoContent])
   })
 
   test('should load user message when click the load button', async () => {

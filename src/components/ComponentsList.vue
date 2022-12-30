@@ -8,16 +8,16 @@
 
 <script setup lang="ts">
 interface Props {
-  list: any[]
+  list: unknown[]
 }
 
 const props = defineProps<Props>()
 
 const emit = defineEmits<{
-  (e: 'on-item-click', data: any): void
+  (e: 'on-item-click', data: unknown): void
 }>()
 
-const onItemClick = (data: any) => {
+const onItemClick = (data: unknown) => {
   emit('on-item-click', data)
 }
 </script>

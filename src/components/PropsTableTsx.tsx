@@ -1,5 +1,4 @@
-import { computed, PropType, VNode } from 'vue'
-import { TextComponentProps } from '../defaultProps'
+import { computed, PropType } from 'vue'
 import { FormProps } from './PropsTable.vue'
 import {
   ElInput,
@@ -11,9 +10,8 @@ import {
   ElSelect,
 } from 'element-plus'
 import { reduce } from 'lodash-es'
-import { mapPropsToForms } from '../propsMap'
 
-const mapToComponent: { [key: string]: any } = {
+const mapToComponent: { [key: string]: unknown } = {
   'el-input': ElInput,
   'el-input-number': ElInputNumber,
   'el-slider': ElSlider,
@@ -36,7 +34,7 @@ export default {
     },
   },
   emit: ['change'],
-  setup(props: { props: TextComponentProps }, { emit }: any) {
+  setup(props: { props: TextComponentProps }, { emit }: unknown) {
     const finalProps = computed(() => {
       return reduce(
         props.props,
@@ -55,7 +53,7 @@ export default {
               valueProp,
               eventName,
               events: {
-                ['on' + capitalizeFirstLetter(eventName)]: (e: any) => {
+                ['on' + capitalizeFirstLetter(eventName)]: (e: unknown) => {
                   emit('change', {
                     key,
                     value: item.afterTransform ? item.afterTransform(e) : e,
@@ -77,8 +75,8 @@ export default {
           const value = finalProps.value[key]
 
           const ComponentName = mapToComponent[value.component]
-          const Subcomponent = value.subcomponent
-            ? mapToComponent[value.subcomponent]
+          const subComponent = value.subComponent
+            ? mapToComponent[value.subComponent]
             : null
 
           const props = {
@@ -94,9 +92,9 @@ export default {
                 {value.options &&
                   value.options.map((option) => {
                     return (
-                      <Subcomponent label={option.value} value={option.value}>
+                      <subComponent label={option.value} value={option.value}>
                         {option.text}
-                      </Subcomponent>
+                      </subComponent>
                     )
                   })}
               </ComponentName>

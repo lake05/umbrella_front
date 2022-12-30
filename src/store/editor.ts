@@ -13,7 +13,7 @@ export interface ComponentData {
   props: Partial<TextComponentProps>
 }
 
-export const testConponents: ComponentData[] = [
+export const testComponents: ComponentData[] = [
   {
     id: uuidv4(),
     name: 'u-text',
@@ -51,7 +51,7 @@ export const testConponents: ComponentData[] = [
 export const useEditorStore = defineStore('editor', {
   state: (): EditorPorps => {
     return {
-      components: testConponents,
+      components: testComponents,
       currentElement: '',
     }
   },
@@ -74,7 +74,7 @@ export const useEditorStore = defineStore('editor', {
     setActive(currentId: string) {
       this.currentElement = currentId
     },
-    updateComponent({ key, value }: { key: string; value: any }) {
+    updateComponent({ key, value }: { key: string; value: unknown }) {
       const updateComponent = this.getCurrentElement
       if (updateComponent) {
         updateComponent.props[key as keyof TextComponentProps] = value

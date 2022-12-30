@@ -1,6 +1,5 @@
 <template>
   <div>
-    store
     {{ template?.title }}
   </div>
 </template>

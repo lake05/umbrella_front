@@ -18,13 +18,13 @@
 import axios from 'axios'
 import { reactive, ref } from 'vue'
 const props = defineProps<{ msg: string }>()
-const emit = defineEmits<{ (e: 'send', data: any): void }>()
+const emit = defineEmits<{ (e: 'send', data: unknown): void }>()
 
 const todo = ref('')
 const todos = ref([])
 const count = ref(1)
 const user = reactive({
-  data: null as any,
+  data: null as unknown,
   loading: false,
   error: false,
 })

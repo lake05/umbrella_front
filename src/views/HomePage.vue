@@ -1,5 +1,6 @@
 <template>
   <div>
+    <el-date-picker type="date" placeholder="Pick a day" />
     <template-list :list="templates" />
   </div>
 </template>

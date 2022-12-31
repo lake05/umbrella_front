@@ -13,6 +13,7 @@
           :id="component.id"
           :active="component.id === getCurrentElement?.id"
         >
+          <l-text />
           <component :is="component.name" v-bind="component.props" />
         </editor-wrapper>
       </div>
@@ -31,10 +32,11 @@
 </template>
 
 <script lang="ts" setup>
-import UText from '@/components/UText.vue'
-
 import { storeToRefs } from 'pinia'
 import { useEditorStore } from '../store/editor'
+
+import { LText } from 'lake-view'
+console.log('LText: ', LText)
 
 const store = useEditorStore()
 const { components, getCurrentElement } = storeToRefs(store)

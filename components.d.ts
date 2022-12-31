@@ -10,11 +10,9 @@ declare module '@vue/runtime-core' {
     AppHeader: typeof import('./src/components/AppHeader.vue')['default']
     ComponentsList: typeof import('./src/components/ComponentsList.vue')['default']
     EditorWrapper: typeof import('./src/components/EditorWrapper.vue')['default']
-    PropsTable: typeof import('./src/components/PropsTable.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
     TemplateList: typeof import('./src/components/TemplateList.vue')['default']
     UserProfile: typeof import('./src/components/UserProfile.vue')['default']
-    UText: typeof import('./src/components/UText.vue')['default']
   }
 }

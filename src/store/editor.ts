@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia'
 import { v4 as uuidv4 } from 'uuid'
-import { TextComponentProps } from '../defaultProps'
+
+import { TextComponentProps } from 'lake-view'
 
 export interface EditorPorps {
   components: ComponentData[]
@@ -74,7 +75,7 @@ export const useEditorStore = defineStore('editor', {
     setActive(currentId: string) {
       this.currentElement = currentId
     },
-    updateComponent({ key, value }: { key: string; value: unknown }) {
+    updateComponent({ key, value }: { key: string; value: any }) {
       const updateComponent = this.getCurrentElement
       if (updateComponent) {
         updateComponent.props[key as keyof TextComponentProps] = value

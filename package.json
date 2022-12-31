@@ -15,15 +15,14 @@
     "mock": "nodemon ./mock/mockServer.cjs"
   },
   "lint-staged": {
-    "*{md,js,jsx,ts,tsx,vue}": "eslint --ext",
-    "**/*.{js,jsx,json,md,scss,ts,tsx,vue}": "prettier --write"
+    "*{js,jsx,ts,tsx,vue}": "eslint --ext",
+    "**/*.{js,jsx,json,scss,ts,tsx,vue}": "prettier --write"
   },
   "dependencies": {
     "axios": "^1.2.2",
     "element-plus": "^2.2.26",
     "lodash-es": "^4.17.21",
     "pinia": "^2.0.28",
-    "um-parts-ui": "^0.1.0",
     "uuid": "^9.0.0",
     "vue": "^3.2.45",
     "vue-router": "^4.1.6"

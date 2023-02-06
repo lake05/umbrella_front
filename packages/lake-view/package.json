@@ -1,0 +1,12 @@
+{
+  "name": "lake-view",
+  "version": "0.0.0",
+  "description": "all components are  here",
+  "main": "index.ts",
+  "module": "index.ts",
+  "unpkg": "index.js",
+  "jsdelivr": "index.js",
+  "peerDependencies": {
+    "vue": "^3.2.0"
+  }
+}

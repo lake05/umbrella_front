@@ -25,7 +25,8 @@
     "pinia": "^2.0.28",
     "uuid": "^9.0.0",
     "vue": "^3.2.45",
-    "vue-router": "^4.1.6"
+    "vue-router": "^4.1.6",
+    "lake-view": "workspace:*"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",

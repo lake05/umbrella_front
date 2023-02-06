@@ -28,6 +28,7 @@
         />
       </div> -->
     </el-col>
+    <l-text />
   </el-row>
 </template>
 
